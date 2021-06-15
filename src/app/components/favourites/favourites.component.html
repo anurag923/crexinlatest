@@ -18,9 +18,9 @@
                 <div class="col-md-4 my-2" *ngFor="let equipment of equipments">
                     <div class="prf-updt">
                         <div class="favourites_image">
-                            <img src="{{equipment.equipment.equipment_image}}" class="img-fluid prf-img">
+                            <img src="{{equipment.subcategory.sc_image}}" class="img-fluid prf-img">
                         </div>
-                        <h5 class="fs-15 fw-700 mgt-10 mgb-5 text-color text-center">{{equipment.equipment.equipment_model}}</h5>
+                        <h5 class="fs-15 fw-700 mgt-10 mgb-5 text-color text-center">{{equipment.subcategory.sc_name}}</h5>
                         <!-- <h4 class="fs-18 fw-700 mgb-5">₹ 7000</h4>
                         <div class="d-flex">
                             <div class="mr-2">

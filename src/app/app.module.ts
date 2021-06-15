@@ -19,6 +19,7 @@ import { TermsandconditionsComponent } from './components/termsandconditions/ter
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from "ngx-spinner";
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // import { MDBBootstrapModule } from 'angular-bootstrap-md';
 @NgModule({
@@ -41,6 +42,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     CategoriesModule,
     NgxMaterialTimepickerModule,
     NgbModule,
+    ReactiveFormsModule,
+    FormsModule,
     ToastrModule.forRoot(),
   ],
   schemas: [
