@@ -813,7 +813,7 @@ export class CheckoutComponent implements OnInit {
     }
     favourites(){
       const data = {
-        eqid : sessionStorage.getItem('eqid')
+        subcategory_id : sessionStorage.getItem('sub_id')
       }
       this.crexinservice.addfavs(data).subscribe((res)=>{
         console.log(res);

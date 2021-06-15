@@ -165,32 +165,42 @@
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="row">
-        <div class="col-md-10 offset-1">
-          <h1 class="fs-20 fw-700 text-center text-color">
-            Update Profile Details
-          </h1>
-        </div>
-        <form action="" class="w-100">
-          <div class="form__div mt-3 col-md-10 offset-1">
-            <input type="text" class="form__input" placeholder=" " formControlName="mobile" value="{{phone}}">
-            <label for="" class="form__label">Mobile Number</label>
-          </div>
-          <div class="form__div mt-3 col-md-10 offset-1">
-            <input type="email" class="form__input" placeholder=" " formControlName="email" value="{{email}}">
-            <label for="" class="form__label">Email Id</label>
-          </div>
-          <div class="form__div mt-3 col-md-10 offset-1">
-            <input type="text" class="form__input" placeholder=" " formControlName="address">
-            <label for="" class="form__label">Address</label>
-          </div>
-          <div class="col-md-10 offset-1">
-            <button class="fs-15 fw-700 text-color btn w-100 pd-10" type="button">
-              Update Profile
-            </button>
-          </div>
-        </form>
+     <div class="row">
+      <div class="col-md-10 offset-1">
+        <h1 class="fs-20 fw-700 text-center text-color">
+          Update Profile Details
+        </h1>
       </div>
+      <form [formGroup]="profile_update" class="w-100">
+        <div class="form__div mt-3 col-md-10 offset-1">
+          <input type="text"  class="form__input" placeholder=" " formControlName="mobile" [(ngModel)]="phone" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }">
+          <label for="" class="form__label">Mobile Number</label>
+          <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+            <div *ngIf="f.mobile.errors.required" class="fs-13">Mobile no is required</div>
+            <div *ngIf="f.mobile.errors.pattern" class="fs-13">Mobil Number must be at 10 digits required</div>
+          </div>
+        </div>
+        <div class="form__div mt-3 col-md-10 offset-1">
+          <input type="email"  class="form__input" placeholder=" " formControlName="email" [(ngModel)]="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+          <label for="" class="form__label">Email Id</label>
+          <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+            <div *ngIf="f.mobile.errors.required" class="fs-13">Email is required</div>
+          </div>
+        </div>
+        <div class="form__div mt-3 col-md-10 offset-1">
+          <input type="text"  class="form__input" placeholder=" " formControlName="address" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+          <label for="" class="form__label">Address</label>
+          <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+            <div *ngIf="f.address.errors.required" class="fs-13">Address is required</div>
+          </div>
+        </div>
+        <div class="col-md-10 offset-1">
+          <button class="fs-15 fw-700 text-color btn w-100 pd-10" type="button" (click)="updateprofile()">
+            Update Profile
+          </button>
+        </div>
+      </form>
+     </div>
     </div>
   </div>
 </div>
